@@ -5,7 +5,7 @@ A **full-stack coffee shop web application** designed to handle ordering, tracki
 ---
 
 ## 🚀 Live Demo
-👉 Add your deployed link here
+[👉 Add your deployed link here](https://coffee-shop-management-system.netlify.app)
 
 ---
 

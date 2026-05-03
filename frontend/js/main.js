@@ -88,11 +88,4 @@ window.addEventListener("load", () => {
   document.body.style.animation = "fadeIn 0.6s ease-out";
 });
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+

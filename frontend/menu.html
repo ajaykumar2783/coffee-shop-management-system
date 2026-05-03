@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Menu - BrewNest</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/api.js"></script>
+    <script defer src="js/menu.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-mug-hot"></i>
+        BrewNest
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="cart.html">Cart</a>
+        <a href="track-order.html">Track Order</a>
+        <a href="admin-login.html">Admin</a>
+      </div>
+    </nav>
+
+    <section class="page-header">
+      <span>Explore Menu</span>
+      <h1>Choose Your Favorite Coffee</h1>
+    </section>
+
+    <section class="filters">
+      <input type="text" id="searchInput" placeholder="Search coffee..." />
+
+      <select id="categoryFilter">
+        <option value="All">All</option>
+        <option value="Hot Coffee">Hot Coffee</option>
+        <option value="Cold Coffee">Cold Coffee</option>
+        <option value="Snacks">Snacks</option>
+      </select>
+    </section>
+
+    <section class="menu-grid" id="menuGrid"></section>
+
+    <script>
+      const cards = document.querySelectorAll(
+        ".feature-card, .menu-card, .stat-card, .order-card, .cart-item",
+      );
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      cards.forEach((card) => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(35px)";
+        card.style.transition = "0.7s ease";
+        observer.observe(card);
+      });
+    </script>
+  </body>
+</html>

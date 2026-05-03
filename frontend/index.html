@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrewNest Coffee</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/main.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-mug-hot"></i>
+        BrewNest
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="cart.html">Cart</a>
+        <a href="track-order.html">Track Order</a>
+        <a href="admin-login.html">Admin</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content fade-up">
+        <span class="tag">Premium Coffee Experience</span>
+        <h1>Fresh Coffee, Fast Orders & Smart Café Management</h1>
+        <p>
+          A modern coffee shop ordering system built for cafés, restaurants, and
+          small businesses.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="menu.html" class="btn primary">Order Now</a>
+          <a href="track-order.html" class="btn secondary">Track Order</a>
+        </div>
+      </div>
+
+      <div class="hero-card fade-up">
+        <img
+          src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=900"
+          alt="Coffee"
+        />
+        <div class="floating-card">
+          <h3>Today’s Special</h3>
+          <p>Classic Cappuccino</p>
+          <strong>₹149</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="section-title">
+        <span>Why Choose Us</span>
+        <h2>Built Like A Real Product</h2>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <i class="fa-solid fa-bolt"></i>
+          <h3>Fast Ordering</h3>
+          <p>Browse menu, add to cart and place orders quickly.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fa-solid fa-chart-line"></i>
+          <h3>Admin Analytics</h3>
+          <p>Track sales, orders, pending requests and completed orders.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fa-solid fa-file-invoice"></i>
+          <h3>PDF Invoice</h3>
+          <p>Customers can download a simple bill after placing an order.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fa-brands fa-whatsapp"></i>
+          <h3>WhatsApp Order</h3>
+          <p>Send order details directly to café WhatsApp.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fa-solid fa-location-arrow"></i>
+          <h3>Order Tracking</h3>
+          <p>Track order status from Pending to Preparing to Completed.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fa-solid fa-mobile-screen"></i>
+          <h3>Responsive UI</h3>
+          <p>Premium responsive design for mobile, tablet and desktop.</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const cards = document.querySelectorAll(
+        ".feature-card, .menu-card, .stat-card, .order-card, .cart-item",
+      );
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      cards.forEach((card) => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(35px)";
+        card.style.transition = "0.7s ease";
+        observer.observe(card);
+      });
+    </script>
+  </body>
+</html>

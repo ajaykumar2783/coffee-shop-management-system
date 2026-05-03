@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kitchen View - BrewNest</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/api.js"></script>
+  <script defer src="js/kitchen.js"></script>
+</head>
+<body>
+<script>
+  if (!localStorage.getItem("adminToken")) {
+    window.location.href = "admin-login.html";
+  }
+</script>
+
+<nav class="navbar">
+  <div class="logo">👨‍🍳 Kitchen Panel</div>
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="admin-menu.html">Menu</a>
+    <a href="kitchen.html" class="active">Kitchen</a>
+    <a href="#" onclick="logoutAdmin()">Logout</a>
+  </div>
+</nav>
+
+<section class="page-header">
+  <span>Live Orders</span>
+  <h1>Kitchen Order Screen</h1>
+</section>
+
+<section class="orders-section">
+  <div id="kitchenOrders"></div>
+</section>
+
+<audio id="notifySound">
+  <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" />
+</audio>
+
+</body>
+</html>

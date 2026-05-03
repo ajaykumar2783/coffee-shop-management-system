@@ -1,0 +1,15 @@
+{
+  "name": "BrewNest Coffee",
+  "short_name": "BrewNest",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#140700",
+  "theme_color": "#ff8a00",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/924/924514.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Track Order - BrewNest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/api.js"></script>
+  <script defer src="js/track-order.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">☕ BrewNest</div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="cart.html">Cart</a>
+      <a href="track-order.html" class="active">Track Order</a>
+      <a href="admin-login.html">Admin</a>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <span>Track Your Coffee</span>
+    <h1>Order Tracking</h1>
+  </section>
+
+  <section class="track-box">
+    <input type="number" id="orderId" placeholder="Enter Order ID" />
+    <input type="text" id="phone" placeholder="Enter Phone Number" />
+    <button class="btn primary full" onclick="trackOrder()">Track Order</button>
+  </section>
+
+  <section id="trackingResult"></section>
+
+</body>
+</html>

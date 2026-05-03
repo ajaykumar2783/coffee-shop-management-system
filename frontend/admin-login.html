@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Login - BrewNest</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/api.js"></script>
+    <script defer src="js/admin-login.js"></script>
+  </head>
+  <body>
+    <section class="login-page">
+      <div class="login-box">
+        <h1>☕ Admin Login</h1>
+        <p>Login to manage orders, menu and sales analytics.</p>
+
+        <input type="text" id="username" placeholder="Admin Username" />
+        <input type="password" id="password" placeholder="Admin Password" />
+
+        <button class="btn primary full" onclick="adminLogin()">Login</button>
+
+        <small>Demo Login: admin / admin123</small>
+      </div>
+    </section>
+  </body>
+</html>

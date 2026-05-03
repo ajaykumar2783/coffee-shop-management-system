@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard - BrewNest</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="js/api.js"></script>
+    <script defer src="js/dashboard.js"></script>
+  </head>
+  <body>
+    <script>
+      if (!localStorage.getItem("adminToken")) {
+        window.location.href = "admin-login.html";
+      }
+    </script>
+
+    <nav class="navbar">
+      <div class="logo">☕ BrewNest Admin</div>
+
+      <div class="nav-links">
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="admin-menu.html">Manage Menu</a>
+        <a href="index.html">Website</a>
+        <a href="kitchen.html">Kitchen</a>
+        <a href="#" onclick="logoutAdmin()">Logout</a>
+      </div>
+    </nav>
+
+    <section class="page-header">
+      <span>Admin Panel</span>
+      <h1>Dashboard & Orders</h1>
+    </section>
+
+    <section class="stats-grid">
+      <div class="stat-card">
+        <p>Total Sales</p>
+        <h2 id="totalSales">₹0</h2>
+      </div>
+
+      <div class="stat-card">
+        <p>Total Orders</p>
+        <h2 id="totalOrders">0</h2>
+      </div>
+
+      <div class="stat-card">
+        <p>Pending</p>
+        <h2 id="pendingOrders">0</h2>
+      </div>
+
+      <div class="stat-card">
+        <p>Completed</p>
+        <h2 id="completedOrders">0</h2>
+      </div>
+    </section>
+
+    <section class="chart-grid">
+      <div class="chart-card">
+        <h2>Daily Sales</h2>
+        <canvas id="salesChart"></canvas>
+      </div>
+
+      <div class="chart-card">
+        <h2>Popular Items</h2>
+        <canvas id="popularChart"></canvas>
+      </div>
+    </section>
+
+    <section class="orders-section">
+      <h2>Recent Orders</h2>
+      <div id="ordersList"></div>
+    </section>
+    <section class="dashboard-filter">
+      <button onclick="loadDashboard('today')">Today</button>
+      <button onclick="loadDashboard('week')">Week</button>
+      <button onclick="loadDashboard('month')">Month</button>
+      <button onclick="loadDashboard('all')">All</button>
+    </section>
+  </body>
+</html>

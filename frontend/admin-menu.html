@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manage Menu - BrewNest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/api.js"></script>
+  <script defer src="js/admin-menu.js"></script>
+</head>
+<body>
+
+  <script>
+    if (!localStorage.getItem("adminToken")) {
+      window.location.href = "admin-login.html";
+    }
+  </script>
+
+  <nav class="navbar">
+    <div class="logo">☕ BrewNest Admin</div>
+
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="admin-menu.html" class="active">Manage Menu</a>
+      <a href="index.html">Website</a>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <span>Menu CRUD</span>
+    <h1>Add, Edit & Delete Coffee Items</h1>
+  </section>
+
+  <section class="admin-form">
+    <input type="hidden" id="itemId" />
+
+    <input type="text" id="name" placeholder="Item Name" />
+    <input type="text" id="category" placeholder="Category" />
+    <input type="number" id="price" placeholder="Price" />
+    <input type="text" id="image" placeholder="Image URL" />
+    <input type="number" id="rating" placeholder="Rating" step="0.1" />
+    <input type="text" id="badge" placeholder="Badge" />
+
+    <button class="btn primary" onclick="saveMenuItem()">Save Item</button>
+    <button class="btn secondary" onclick="clearForm()">Clear</button>
+  </section>
+
+  <section class="menu-grid" id="adminMenuGrid"></section>
+
+</body>
+</html>

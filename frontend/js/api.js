@@ -1,9 +1,9 @@
-// Auto-detect environment
+// Auto detect localhost
 const isLocalhost =
   window.location.hostname === "localhost" ||
   window.location.hostname === "127.0.0.1";
+
+// Backend base URL
 const API_BASE_URL = isLocalhost
   ? "http://127.0.0.1:5000/api"
-  : "https://coffee-shop-management-system-k2o5.onrender.com";
-
-const API_BASE = `${API_BASE_URL}/api`;
+  : "https://coffee-shop-management-system-k2o5.onrender.com/api";
